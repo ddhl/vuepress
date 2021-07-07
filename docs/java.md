@@ -1,6 +1,7 @@
 # 前端面试基础
 
-- hook useRef()的用法
+- 什么是 BFC
+- 如何清除浮动
 - 什么是 webpack
 - 几个常见的 loader
 - webpack 的基本功能
@@ -18,15 +19,44 @@
 
 ---
 
-## hook useRef()的用法
+## 什么是 BFC
 
-相信有过 React 使用经验的人对 ref 都会熟悉，它可以用来获取组件实例对象或者是 DOM 对象。
+BFC：块级格式化上下文，它是指一个独立的块级渲染区域，只有 Block-level BOX 参与，该区域拥有一套渲染规则来约束块级盒子的布局，且与区域外部无关。
+一个 HTML 元素要创建 BFC，则满足下列的任意一个或多个条件即可：
 
-而 useRef 这个 hooks 函数，除了传统的用法之外，它还可以“跨渲染周期”保存数据。
+1. float 的值不是 none。
+2. position 的值不是 static 或者 relative。
+3. display 的值是 inline-block、table-cell、flex、table-caption 或者 inline-flex
+4. overflow 的值不是 visible
 
-在一个组件中有什么东西可以跨渲染周期，也就是在组件被多次渲染之后依旧不变的属性？第一个想到的应该是 state。没错，一个组件的 state 可以在多次渲染之后依旧不变。但是，state 的问题在于一旦修改了它就会造成组件的重新渲染。
+## 如何清除浮动
 
-那么这个时候就可以使用 useRef 来跨越渲染周期存储数据，而且对它修改也不会引起组件渲染。
+如下，我给父盒子设置一个 border，内部放两个盒子一个 big 一个 small，未给 big 和 small 设置浮动，则他们会默认撑开父盒子。
+
+![test](/float.jpg)
+
+当我给内部两个盒子加上 float 属性的时候, 父元素的高度会变成一条线，顶部蓝色盒子会顶上来。
+
+![test](/float1.jpg)
+
+使用双伪类元素清除浮动。
+
+```Css
+.clearfix:after,.clearfix:before{
+content: "";
+display: table;
+}
+.clearfix:after{
+clear: both;
+}
+.clearfix{
+*zoom: 1;
+}
+```
+
+结果如下
+
+![test](/float2.jpg)
 
 ## 什么是 webpack
 
