@@ -1,4 +1,4 @@
-# 前端面试基础
+# 前端基础
 
 - 什么是 BFC
 - 如何清除浮动
@@ -15,7 +15,7 @@
 - 闭包
 - JS 防抖(debounce) 与 节流(throttle)
 
-> 前端面试问题总结
+> 前端问题总结
 
 ---
 
@@ -65,12 +65,22 @@ WebPack 可以看做是模块打包机：它做的事情是，分析你的项目
 
 ### webpack 的基本功能
 
+# [webpack 深入浅出](https://webpack.wuhaolin.cn/)
+
 1. 代码转换
 1. 文件优化
 1. 代码分割
 1. 模块合并
 1. 自动刷新
 1. 自动发布
+
+### plugin 有什么用处
+
+插件也是 webpack 最强大的一个功能之一，插件可以实现很多 loader 无法完成的事情。他的工作其实是在打包构建的每个环节去添加对应生命钩子函数，并执行对应的钩子来对文件进行修改。如果说 loader 是实现模块化打包，那么 plugin 就是帮助我们构建自动化流程和优化的一个工具，比如自动清除代码，根据模板生成 html 文件，拷贝公共资源文件等
+
+### webpack 打包后生成的模块解析
+
+[解析](https://www.cnblogs.com/skychx/p/webpack-module-chunk-bundle.html)
 
 ### 几个常见的 loader
 

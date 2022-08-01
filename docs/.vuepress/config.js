@@ -10,8 +10,9 @@ module.exports = {
     },
     themeConfig: {
         nav: [ // 导航栏配置
-            { text: 'javaScript面试题', link: '/java/' },
-            { text: 'react面试题', link: '/react/' },
+            { text: 'javaScript', link: '/java/' },
+            { text: 'react', link: '/react/' },
+            { text: 'vue', link: '/vue/' },
             { text: '微博', link: 'https://baidu.com' }
         ],
         sidebar: 'auto', // 侧边栏配置

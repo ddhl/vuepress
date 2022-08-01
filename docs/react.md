@@ -1,8 +1,18 @@
-# React 面试题
+# React
 
-- 什么是 Hook
-- 为什么使用 Hook
-- 常用的 Hook 有那些
+## 架构
+
+[架构](https://www.kancloud.cn/freya001/haoke/1666914)
+
+## redux 单向数据流
+
+![test](/lifecycle.png)
+
+页面视图 View 触发 dispatch -> Actions 进入 State，state 先深复制再通过 reducer 修改数据，修改完成后返回一个新的数据，然后页面 View 自动更新
+
+## JSX 的本质是什么
+
+react 通过 babel 把 JSX 转成 createElement 函数，生成 ReactElement 对象，然后通过 ReactDOM.render 函数把 ReactElement 渲染成真是的 DOM 元素
 
 ## 什么是 Hook
 
